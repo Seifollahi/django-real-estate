@@ -15,7 +15,7 @@ class CustomUserManager(BaseUserManager):
         if not username:
             raise ValueError(_('Users must submit a username'))
 
-        if not las_name:
+        if not last_name:
             raise ValueError(_('User must submit a last name'))
 
         if email:
@@ -27,7 +27,7 @@ class CustomUserManager(BaseUserManager):
 
         user = self.model(
             username=username, 
-            firstname=first_name,
+            first_name=first_name,
             last_name=last_name,
             email=email,
             **extra_fields
